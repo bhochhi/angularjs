@@ -23,17 +23,24 @@
 					<div class="row madlibs-title-text">Automate this!</div>
 				</div>
 			</div>
-			<div class="fill-in-title"><h1>Provide following words:</h1></div>
-
-			<div class="row fill-in-main-row">		
-				<div class="row" ng-repeat="jdx in [0,1,2]">
-					<div class="col-sm-4" ng-repeat="idx in [jdx*3,jdx*3+1,jdx*3+2]">						
-						<h4>
-							<input id="{{words[idx].id}}" type="text" ng-model ="words[idx].value" placeholder="{{words[idx].placeholder}}"/>
-						</h4>
+			
+			<div class="row panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title fill-in-title">Provide following words:</h1>
+				</div>
+				<div class="panel-body">
+					<div class="row" ng-repeat="jdx in [0,1,2]">
+						<div class="col-sm-4" ng-repeat="idx in [jdx*3,jdx*3+1,jdx*3+2]">						
+							<h4>
+								<input id="{{words[idx].id}}" type="text" ng-model ="words[idx].value" placeholder="{{words[idx].placeholder}}"/>
+							</h4>
+						</div>
 					</div>
 				</div>
 			</div>
+
+
+
 
 
 			<div class="row">
