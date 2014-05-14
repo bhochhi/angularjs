@@ -1,0 +1,39 @@
+.main-section {
+  margin-top:  50px;  
+  border: solid;
+  text-align: center;
+}
+
+.logo {
+  /*	border-right: solid #000 2px;*/
+}
+
+.madlibs-title{
+  border-left: solid 2px;	
+}
+
+.madlibs {
+  border-bottom: solid;
+	height: auto;
+}
+
+
+
+.madlibs-title-text {
+	font-size: 4em;
+	font-family: cursive;
+}
+
+.fill-in-title {
+	text-align: left;
+}
+
+.fill-in-main-row {
+	border-bottom: solid;
+}
+
+.madlibs-story {
+	font-size: 2em;
+	margin: 50px 50px;
+	text-align: left;
+}
