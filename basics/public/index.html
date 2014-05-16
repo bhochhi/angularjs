@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app=myApp>
+<head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body ng-controller=myController>
+
+Search:<input ng-model="query"/>
+
+<p>Nothing here {{'yet' + '!'}}</p>
+
+<p>2+1 = {{2 + 1}}</p>
+
+<div ng-model="addStudent">
+    Name:<input name="name"/>
+    Age:<input name="age"/>
+</div>
+<select ng-model='orderProp'>
+    <option value="name">Alphabetic</option>
+    <option value="age">youngest</option>
+</select>
+<ul>
+    <li ng-repeat="stu in students | filter:query | orderBy:orderProp">
+        {{stu.name}}
+        <p>{{stu.age}}</p>
+    </li>
+</ul>
+
+<input type="text" ng-model="name"/>
+<form name="myForm" ng-controller="Ctrl">
+
+    <input validation type="email" ng-model="email" name="input" required/>
+    <span class="error" ng-show="myForm.input.$error.required">
+           Required!</span>
+         <span class="error" ng-show="myForm.input.$error.email">
+           Not valid email!</span>
+
+</form>
+
+<p>Hello, {{name}}!</p>
+</body>
+</html>
