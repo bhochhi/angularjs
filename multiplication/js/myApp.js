@@ -25,4 +25,7 @@ angular.module('myApp',[])
   $scope.matchesFactor = function (a, b) {
       return a === activeFactorA || b === activeFactorB;
   };
+	$scope.clearActiveFactors = function(){
+		activeFactorA=activeFactorB=undefined;
+	};
 }]);

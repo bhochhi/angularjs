@@ -13,8 +13,8 @@
 				<tr ng-repeat="numberA in numbers">
 					<td ng-repeat="numberB in numbers"
 						ng-mouseover="setActiveFactors(numberA,numberB)"
-						ng-class="{donkey:matchesFactor(numberA,numberB)}"
-						>
+						ng-mouseleave="clearActiveFactors()"
+						ng-class="{donkey:matchesFactor(numberA,numberB)}">
 						{{compute(numberA,numberB)}}
 					</td>
 				</tr>
