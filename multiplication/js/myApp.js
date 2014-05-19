@@ -14,4 +14,15 @@ angular.module('myApp',[])
 		$scope.numbers = populateNumbers(limit);
 	});
 	$scope.numberLimit = $attrs.initialNumberLimit || 10;	
+	
+	
+  var activeFactorA, activeFactorB;
+  $scope.setActiveFactors = function(a, b) {
+      activeFactorA = a;
+      activeFactorB = b;
+  };
+
+  $scope.matchesFactor = function (a, b) {
+      return a === activeFactorA || b === activeFactorB;
+  };
 }]);

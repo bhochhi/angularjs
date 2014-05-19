@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Multiplication Table</title>
+		<link href="css/main.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -10,7 +11,10 @@
 			<input type="number" ng-model="numberLimit" placeholder="Enter a number" />
 			<table>
 				<tr ng-repeat="numberA in numbers">
-					<td ng-repeat="numberB in numbers">
+					<td ng-repeat="numberB in numbers"
+						ng-mouseover="setActiveFactors(numberA,numberB)"
+						ng-class="{donkey:matchesFactor(numberA,numberB)}"
+						>
 						{{compute(numberA,numberB)}}
 					</td>
 				</tr>
