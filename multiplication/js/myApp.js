@@ -1,5 +1,5 @@
 angular.module('myApp',[])
-.controller('MultiplicationCtrl',["$scope","$attrs",function($scope,$attrs){
+.controller('MultiplicationCtrl',["$scope","$attrs","$rootScope",function($scope,$attrs,rootScope){
 	function populateNumbers(x) {
 		var numbers = [];
 		for(var i=0; i<x; i++) {
@@ -14,18 +14,26 @@ angular.module('myApp',[])
 		$scope.numbers = populateNumbers(limit);
 	});
 	$scope.numberLimit = $attrs.initialNumberLimit || 10;	
-	
-	
-  var activeFactorA, activeFactorB;
-  $scope.setActiveFactors = function(a, b) {
-      activeFactorA = a;
-      activeFactorB = b;
-  };
 
-  $scope.matchesFactor = function (a, b) {
-      return a === activeFactorA || b === activeFactorB;
-  };
+
+	var activeFactorA, activeFactorB;
+	$scope.setActiveFactors = function(a, b) {
+		activeFactorA = a;
+		activeFactorB = b;
+	};
+
+	$scope.matchesFactor = function (a, b) {
+		return a === activeFactorA || b === activeFactorB;
+	};
 	$scope.clearActiveFactors = function(){
 		activeFactorA=activeFactorB=undefined;
 	};
+	$scope.setActiveNumber = function(number) {
+		rootScope.$broadcast('displayData', number);
+	};
+}])
+.controller('DisplayCtrl',['$scope',function($scope){
+	$scope.$on('displayData',function(event,data){
+		$scope.content = data;
+	});
 }]);
