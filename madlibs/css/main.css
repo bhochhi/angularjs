@@ -26,6 +26,7 @@
 
 .fill-in-title {
 	text-align: left;
+	font-size: 2em;
 }
 
 .fill-in-main-row {
@@ -34,6 +35,6 @@
 
 .madlibs-story {
 	font-size: 2em;
-	margin: 50px 50px;
+	padding:  50px 50px;
 	text-align: left;
 }
