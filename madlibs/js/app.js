@@ -51,4 +51,14 @@ angular.module('madlibs',[])
 		}	
 		return '';
 	}
+
+	$scope.displayStory = false;
+	$scope.displayWords = true;
+
+	$scope.submit = function(){
+		if($scope.myForm.$valid){
+			$scope.displayStory = true;
+			$scope.displayWords = false;
+		}
+	}
 });
