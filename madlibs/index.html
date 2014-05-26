@@ -8,50 +8,72 @@
 		<title>Madlips</title>
 		<!-- Bootstrap -->
 		<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+		<link rel='stylesheet' href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 
+
 	<body ng-controller="myCtrl">
 
-		<div class="container main-section">
-			<div class="row madlibs">
-				<div class="col-sm-2">
-					<img src="img/mad-lib-happy-face.png" width="140px" />
+		<div class="container madlib-container">
+			<div class="row madlib-header">
+				<div class="col-sm-2 logo">
+					<img src="img/mad-lib-happy-face.png" class="img-responsive"/>
 				</div>
-				<div class="col-sm-10 madlibs-title">
-					<img src="img/ng-mad-libs-logo.png" width="250px" />
-					<div class="row madlibs-title-text">Automate this!</div>
+				<div class="col-sm-10">
+					<img src="img/ng-mad-libs-logo.png" class="img-responsive" />
+					<div class="madlib-title">Automate this!</div>
 				</div>
-			</div>
-			
-			<div class="row panel panel-default">
-				<div class="panel-heading">
-					<h1 class="panel-title fill-in-title">Provide following words:</h1>
-				</div>
-				<div class="panel-body">
-					<div class="row" ng-repeat="jdx in [0,1,2]">
-						<div class="col-sm-4" ng-repeat="idx in [jdx*3,jdx*3+1,jdx*3+2]">						
-							<h4>
-								<input id="{{words[idx].id}}" type="text" ng-model ="words[idx].value" placeholder="{{words[idx].placeholder}}"/>
-							</h4>
+			</div>	
+
+			<div class="madlib-content">
+				<div ng-show="displayWords">
+					<div class="text-left"><h1>Provide following words:</h1></div>
+					<form name="myForm" ng-submit="submitted = true; submit();" novalidate>
+						<div class="error">
+							<h3 ng-show="submitted && !myForm.$valid">One or more fields are empty or invalid.</h3>
 						</div>
-					</div>
+						<div class="row" ng-repeat="jdx in [0,1,2]">
+							<div class="col-sm-4" ng-repeat="idx in [jdx*3,jdx*3+1,jdx*3+2]">
+								<h4>
+									<input ng-name="{{words[idx].id}}" type="text" ng-model ="words[idx].value" placeholder="{{words[idx].placeholder}}" required />
+								</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<hr>
+							</div>
+						</div>
+						<div class="row text-align-right">
+
+							<div class="col-sm-3 col-sm-offset-9">
+								<button type="submit">Generate My Mad Lib</button>
+							</div>
+						</div>
+					</form>
 				</div>
+				<div ng-show="submitted && displayStory">
+					<div class="row madlibs-story">
+						<p> <u>{{getWord('male_name')}}</u> was a <u>{{getWord('job_title')}}</u> who loved technology. Although he               loved parts of he job, he absolutely hated  <u>{{getWord('tedious_task')}}</u> and                          <u> {{getWord('dirty-task')}}</u>. So, {{getWord('male_name')}}</u> met with he life mentor {{getWord('celebrity')}}</u> who told he to learn how to <u>{{getWord('useless_skill')}}</u> with Thinkful. Thinkful didn't offer a course on <u>{{getWord('useless_skill')}}</u> so he studied programming instead. 
+			</p>
+			<p>
+				What a great decision! With he new skills, <u>{{getWord('male_name')}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{getWord('obnoxiuous_celbertity')}}</u> that not only loved <u>{{getWord('dirty_task')}}</u> but did it <u>{{getWord('huge_number')}}</u> faster. 
+			</p> 
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<hr>
 			</div>
+		</div>
+		<div class="row text-align-right">
 
-
-
-
-
-			<div class="row">
-				<div class="well madlibs-story">
-					<p> <u>{{getWord('male_name')}}</u> was a <u>{{getWord('job_title')}}</u> who loved technology. Although he               loved parts of he job, he absolutely hated  <u>{{getWord('tedious_task')}}</u> and <u> {{getWord('dirty_task')}}</u>. So, {{getWord('male_name')}}</u> met with he life mentor {{getWord('celebrity')}}</u> who told he to learn how to <u>{{getWord('useless_skill')}}</u> with Thinkful. Thinkful didn't offer a course on <u>{{getWord('useless_skill')}}</u> so he studied programming instead. 
-		</p>
-		<p>
-			What a great decision! With he new skills, <u>{{getWord('male_name')}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{getWord('obnoxiuous_celbertity')}}</u> that not only loved <u>{{getWord('dirty_task')}}</u> but did it <u>{{getWord('huge_number')}}</u> faster. 
-		</p>
-
-
+			<div class="col-sm-3 col-sm-offset-9">
+				<button ng-click="displayStory=false; displayWords=true; startOver();">Start over</button>
+			</div>
+		</div>
 	</div>
 </div>
 </div>
