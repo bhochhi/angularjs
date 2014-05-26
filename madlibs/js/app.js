@@ -1,6 +1,6 @@
 angular.module('madlibs',[])
 .controller('myCtrl',function($scope){
-	var words = [
+	$scope.words  = [
 		{
 			id:"male_name",
 			value:"",
@@ -38,15 +38,14 @@ angular.module('madlibs',[])
 			value:"",
 			placeholder:"adjective"
 		}];
-	$scope.words = words;
 	$scope.getWord = function(type){
 		var i;
-		for(i=0;i<words.length;i++){
-			if(words[i].id==type){
-				if(words[i].value==''){
-					return words[i].placeholder;
+		for(i=0;i<$scope.words.length;i++){
+			if($scope.words[i].id==type){
+				if($scope.words[i].value==''){
+					return $scope.words[i].placeholder;
 				}
-				return words[i].value;
+				return $scope.words[i].value;
 			}
 		}	
 		return '';
@@ -60,5 +59,14 @@ angular.module('madlibs',[])
 			$scope.displayStory = true;
 			$scope.displayWords = false;
 		}
+	}
+
+	$scope.startOver = function(){
+		var i;
+				for(i=0;i<$scope.words.length;i++){	
+		$scope.words[i].value = "";		
+		
+				}
+		$scope.submitted=false;
 	}
 });
