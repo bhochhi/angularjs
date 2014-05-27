@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html  ng-app lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>WaitStaff Calculator</title>
+		<!-- Bootstrap -->
+		<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+		<link rel='stylesheet' href="css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+
+	<body>
+		<div class="container text-center">
+			<div class="row">
+				<span class="col-sm-12 waitstaff-title">Waitstaff Calculator</span>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-2  waitstaff waitstaff-meal-detail">
+					<div class="row border-bottom">
+						<div class="col-sm-8 waitstaff-sub-title">Enter the meal details</div>
+					</div>
+					<div class="row waitstaff-items">
+						<div class="col-sm-6 text-right">Base Meal Price: $ </div>
+						<div class="col-sm-6 text-left"><input type="number"></div>
+					</div>
+					<div class="row waitstaff-items">
+						<div class="col-sm-6 text-right">Tax Rate: % </div>
+						<div class="col-sm-6 text-left"><input type="number"></div>
+					</div>
+					<div class="row waitstaff-items">
+						<div class="col-sm-6 text-right">Tip Percentage: % </div>
+						<div class="col-sm-6 text-left"><input type="number"></div>
+					</div>
+					<br>
+					<br>
+					<div class="row waitstaff-items">
+						<div class="col-sm-6 text-right"><button>Submit</button></div>
+						<div class="col-sm-6 text-left"><button>Cancel</button></div>
+					</div>
+				</div>
+				<div class="col-xs-1" style="width:20px;"></div>
+				<div class="col-sm-3">
+					<div class="row waitstaff waitstaff-cutomer-charge">
+						<div class="col-sm-12">
+							<div class="row border-bottom">
+								<div class="col-sm-10 waitstaff-sub-title">Customer dCharges</div>
+							</div>
+							<div class="row waitstaff-items">
+								<div class="col-sm-5 text-right">Subtotal </div>
+								<label class="col-sm-2 text-left">{{meal.subtotal}}</label>
+							</div>
+							
+							<div class="row  waitstaff-items border-bottom">
+								<div class="col-sm-5 text-right">Tip </div>
+								<label class="col-sm-2 text-left">{{meal.tip}}</label>
+							</div>
+							<div class="row waitstaff-items">
+							<div class="col-sm-5 text-right">Total </div>
+								<label class="col-sm-2 text-left">{{meal.total}}</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row waitstaff waitstaff-my-earning">
+						<div class="col-sm-12">
+							<div class="row border-bottom">
+								<div class="col-sm-10 waitstaff-sub-title">My Earnings Info</div>
+							</div>
+							<div class="row waitstaff-items">
+								<div class="col-sm-8 text-right">Tip Total: </div>
+								<label class="col-sm-2 text-left">{{meal.tipTotal}}</label>
+							</div>
+							
+							<div class="row  waitstaff-items border-bottom">
+								<div class="col-sm-8 text-right">Meal Count: </div>
+								<label class="col-sm-2 text-left">{{meal.mealCount}}</label>
+							</div>
+							<div class="row waitstaff-items">
+							<div class="col-sm-8 text-right">Average Tip Per Meal: </div>
+								<label class="col-sm-1 text-left">{{meal.averageTip}}</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">			
+				<div class="col-sm-1 col-sm-offset-10"><button ng-click="reset()">Reset</button></div>
+			</div>
+
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script src="vendor/bootstrap/js/bootstrap.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+			<script src="js/app.js"></script>
+		</body>
+
+	</html>
