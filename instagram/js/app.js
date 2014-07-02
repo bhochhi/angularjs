@@ -26,7 +26,7 @@ angular.module('instaApp',['ngAnimate'])
 				$scope.submitted = true;
 				$scope.error =false;			
 				$scope.searched_word = $scope.search.word;
-				$scope.search.word=undefined;
+				//$scope.search.word=undefined;
 				$scope.search.count = len;
 
 			}

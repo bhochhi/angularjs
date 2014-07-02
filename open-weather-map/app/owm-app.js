@@ -2,7 +2,7 @@ angular.module('OWMApp', ['ngRoute'])
 .value('ownCities',['New York', 'Dallas', 'Chicago'])
 .config(function($routeProvider){
 	$routeProvider.when('/',{
-		templateUrl:'./home.html',
+		templateUrl:'/home.html',
 		controller:'HomeCtrl'
 	}).when('/cities/:city',{
 		templateUrl:'./city.html',
