@@ -1,0 +1,27 @@
+{
+  "name": "waitstaffs",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bhochhi/angularjs",
+  "authors": [
+    "Rupesh Bhochhibhoya <bhochhi@gmail.com>"
+  ],
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.18",
+    "angular-route": "~1.2.18",
+    "bootstrap": "~3.1.1",
+    "angular-loading-bar": "~0.4.3",
+    "angular-animate": "~1.2.18"
+  }
+}

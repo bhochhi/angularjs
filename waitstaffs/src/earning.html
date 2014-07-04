@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4 waitstaff">
+		<div class="row border-bottom">
+			<div class="col-sm-10 waitstaff-sub-title">My Earnings for This Shift</div>
+		</div>
+		<div class="row waitstaff-items">
+			<div class="col-sm-8 text-right">Tip Total: </div>
+			<label class="col-sm-2 text-left">{{earnings.totalTip | number:2}}</label>
+		</div>
+
+		<div class="row  waitstaff-items">
+			<div class="col-sm-8 text-right">Meal Count: </div>
+			<label class="col-sm-2 text-left">{{earnings.mealCount | number }}</label>
+		</div>
+		<div class="row waitstaff-items">
+			<div class="col-sm-8 text-right">Average Tip Per Meal: </div>
+			<label class="col-sm-1 text-left">{{earnings.averageTip | number:2}}</label>
+		</div>
+	</div>
+</div>
+<div class="row">	
+	<div class="col-sm-1 col-centered"><button ng-click="reset()">Reset</button></div>
+</div>
