@@ -1,48 +1,50 @@
-<div class="row">
-	<div class="col-sm-4 col-sm-offset-4  waitstaff">
-		<div class="row border-bottom">
-			<div class="col-sm-8 waitstaff-sub-title">Enter the meal details</div>
-		</div>
-		<div class="row waitstaff-items">
-			<div class="col-sm-6 text-right">Base Meal Price: $</div>
-			<div class="col-sm-6 text-left"><input type="text" ng-model="baseMeal.basePrice" value="baseMeal.basePrice"></div>
-		</div>
-		<div class="row waitstaff-items">
-			<div class="col-sm-6 text-right">Tax Rate: %</div>
-			<div class="col-sm-6 text-left"><input class="rate" type="text" ng-model="baseMeal.taxRate" value="baseMeal.taxRate"></div>
-		</div>
-		<div class="row waitstaff-items">
-			<div class="col-sm-6 text-right">Tip Percentage: %</div>
-			<div class="col-sm-6 text-left"><input class="rate" type="text" ng-model="baseMeal.tipPercent" value="baseMeal.tipPercent"></div>
-		</div>
-		<br>
-		<br>
-		<div class="row waitstaff-items">
-			<div class="col-sm-6 text-right"><button ng-click="submit()">Submit</button></div>
-			<div class="col-sm-6 text-left"><button ng-click="cancel()">Cancel</button></div>
-		</div>
+<div ng-class="{loading:isLoading}">
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4  waitstaff">
+			<div class="row border-bottom">
+				<div class="col-sm-8 waitstaff-sub-title">Enter the meal details</div>
+			</div>
+			<div class="row waitstaff-items">
+				<div class="col-sm-6 text-right">Base Meal Price: $</div>
+				<div class="col-sm-6 text-left"><input type="text" ng-model="baseMeal.basePrice" value="baseMeal.basePrice"></div>
+			</div>
+			<div class="row waitstaff-items">
+				<div class="col-sm-6 text-right">Tax Rate: %</div>
+				<div class="col-sm-6 text-left"><input class="rate" type="text" ng-model="baseMeal.taxRate" value="baseMeal.taxRate"></div>
+			</div>
+			<div class="row waitstaff-items">
+				<div class="col-sm-6 text-right">Tip Percentage: %</div>
+				<div class="col-sm-6 text-left"><input class="rate" type="text" ng-model="baseMeal.tipPercent" value="baseMeal.tipPercent"></div>
+			</div>
+			<br>
+			<br>
+			<div class="row waitstaff-items">
+				<div class="col-sm-6 text-right"><button ng-click="submit()">Submit</button></div>
+				<div class="col-sm-6 text-left"><button ng-click="cancel()">Cancel</button></div>
+			</div>
 
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="col-sm-4 col-sm-offset-4  waitstaff waitstaff-meal-detail">
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="row border-bottom">
-					<div class="col-sm-10 waitstaff-sub-title">Customer Charges</div>
-				</div>
-				<div class="row waitstaff-items">
-					<div class="col-sm-5 text-right">Subtotal </div>
-					<label class="col-sm-2 text-left">{{customerCharge.subTotal | number:2}}</label>
-				</div>
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4  waitstaff waitstaff-meal-detail">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="row border-bottom">
+						<div class="col-sm-10 waitstaff-sub-title">Customer Charges</div>
+					</div>
+					<div class="row waitstaff-items">
+						<div class="col-sm-5 text-right">Subtotal </div>
+						<label class="col-sm-2 text-left">{{customerCharge.subTotal | number:2}}</label>
+					</div>
 
-				<div class="row  waitstaff-items border-bottom">
-					<div class="col-sm-5 text-right">Tip </div>
-					<label class="col-sm-2 text-left">{{customerCharge.tip | number:2 }}</label>
-				</div>
-				<div class="row waitstaff-items">
-					<div class="col-sm-5 text-right">Total </div>
-					<label class="col-sm-2 text-left">{{customerCharge.total | number:2}}</label>
+					<div class="row  waitstaff-items border-bottom">
+						<div class="col-sm-5 text-right">Tip </div>
+						<label class="col-sm-2 text-left">{{customerCharge.tip | number:2 }}</label>
+					</div>
+					<div class="row waitstaff-items">
+						<div class="col-sm-5 text-right">Total </div>
+						<label class="col-sm-2 text-left">{{customerCharge.total | number:2}}</label>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,5 @@
 
-angular.module('waitStaffApp',['angular-loading-bar','ngRoute','ngAnimate'])
+angular.module('waitStaffApp',['ngRoute','ngAnimate'])
 .config(function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl:'./home.html'
@@ -21,10 +21,13 @@ angular.module('waitStaffApp',['angular-loading-bar','ngRoute','ngAnimate'])
 		return viewLocation === $location.path();
 	};
 })
-.controller('MealCtrl',function($scope,$http,cfpLoadingBar,earningService){
+.controller('MealCtrl',function($scope,earningService){
 	$scope.baseMeal = {};
 	$scope.customerCharge ={}
 	var earnings = earningService.getEarnings();
+	
+	
+	
 
 	$scope.submit = function(){
 		if($scope.customerCharge.total){
@@ -74,6 +77,25 @@ angular.module('waitStaffApp',['angular-loading-bar','ngRoute','ngAnimate'])
 		return my_earnings;
 	}
 
+})
+
+
+.run(function($rootScope,$location,$timeout){
+	$rootScope.$on('$routeChangeError',function(){
+		$location.path('/error');
+	});
+
+	$rootScope.$on('$routeChangeStart',function(){
+		$rootScope.isLoading = true;
+	});
+	
+	$rootScope.$on('$routeChangeSuccess',function(){
+		$timeout(function(){
+			$rootScope.isLoading=false;
+		},1000);
+	});
+	
+	
 })
 
 ;
