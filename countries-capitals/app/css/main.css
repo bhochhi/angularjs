@@ -1,7 +1,7 @@
 .jumbotron{
 	font-size: 3em;	
 	border-bottom: solid black 2px;
-	
+
 }
 .fluid-container{
 	text-align: center;
@@ -16,6 +16,12 @@
 	width:70%;
 }
 
+.countries-row:hover{
+	color: #fff;
+	background-color: #31b0d5;
+	border-color: #269abc; 
+	cursor: pointer;
+}
 
 tr>th{
 	text-align: center;	
@@ -38,7 +44,7 @@ tr>th{
 .country-left {
 	float: left;
 	text-align: right;
-	
+
 }
 .country-right {
 	float: right;
@@ -48,6 +54,23 @@ tr>th{
 div.country-left,div.country-right{
 	font-size: 1.5em;
 	line-height: 2em;
+}
+
+/*** loading animation ***/
+.loading {
+	position:relative;
+	height:100%;
+}
+.loading:before {
+	position:absolute;
+	content:"";
+	left:0;
+	bottom:0;
+	right:0;
+	top:0;
+	z-index:1000;
+	background:rgba(255,255,255,0.9) no-repeat center center;
+/*	background-image: url('./loading-animation.gif');*/
 }
 
 

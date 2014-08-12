@@ -4,5 +4,9 @@ app.controller('CountryCtrl',['$scope','$location','countryDetails',function($sc
 	$scope.go = function(path){
 		$location.path(path);	
 	};
+	
+	$scope.go = function(path){
+		$location.path(path);
+	}
 
 }]);
