@@ -1,6 +1,25 @@
 <div class="countries">
-	<div ng-repeat="country in countries">
-		{{country}}
-	</div>
-	<button ng-click="go('/')">Home</button>
+	<div class="panel panel-default">
+		<table class="table">
+			<tr>
+			<th>Name</th>
+			<th>Country Code</th>
+			<th>Capital</th>
+			<th>Area in Km2</th>
+			<th>Population</th>
+			<th>Continent</th> 
+		</tr>
+		
+		<tr ng-repeat="country in countries">
+			<td>{{country.name}}</td>
+			<td>{{country.countryCode}}</td>
+			<td>{{country.capital}}</td>
+			<td>{{country.area | number}}</td>
+			<td>{{country.population | number}}</td>
+			<td>{{country.continent}}</td>
+		</tr>
+	</table>
+</div>
+<hr>
+<button ng-click="go('/')">Home</button>
 </div>

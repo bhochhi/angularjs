@@ -24,7 +24,7 @@ gulp.task('usemin', function() {
 
 gulp.task('connect', function() {
   connect.server({
-    root: 'app/'
+    root: 'build/'
   });
 });
 

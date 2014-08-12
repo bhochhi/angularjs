@@ -18,7 +18,7 @@ app.controller('CountriesCtrl',['$scope','$location','Countries',function($scope
 	Countries.list().then(function(data){
 		$scope.countries = data;
 	});
-//	
+
 	$scope.go = function(path){
 	$location.path(path);	
 	};

@@ -13,7 +13,6 @@ app.service('Countries',['$resource','$q','$http',function($resource,$q,$http){
 		.success(function (data) {
 
 			defer.resolve(_.map(data.geonames,function(item){
-				console.log("calling map");
 				return 	{
 					name:item.countryName,
 					countryCode:item.countryCode,
