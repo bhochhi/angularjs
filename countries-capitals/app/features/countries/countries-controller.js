@@ -20,7 +20,6 @@ app.controller('CountriesCtrl',['$scope','$location','Countries',function($scope
 	});
 
 	$scope.go = function(path){
-		console.log(path);
 		$location.path(path);	
 	};
 

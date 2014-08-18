@@ -13,6 +13,6 @@ var app = angular.module('ccApp', ['ngRoute', 'ngAnimate','ngResource'])
     $rootScope.$on('$routeChangeSuccess', function() {
       $timeout(function() {
         $rootScope.isLoading = false;
-      }, 0);
+      }, 1000);
     });	
 });
