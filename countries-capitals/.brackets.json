@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/projects/angular-001/countries-capitals/app/bower_components/jquery/src/outro.js",
+        "C:/projects/angular-001/countries-capitals/app/bower_components/jquery/src/attributes/val.js"
+    ]
+}
