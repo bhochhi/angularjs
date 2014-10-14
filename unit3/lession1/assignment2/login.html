@@ -1,0 +1,21 @@
+<section class="row login">
+	<div class="col-lg-3" ng-transclude></div>
+	<div class="col-lg-1"></div>
+	<div class="col-lg-6">
+		<form name="opt-in" ng-submit="submit()">
+			<div class="row">
+				<input class="col-lg-5" type="text" placeholder="First Name" ng-model="fName">
+				<div class="col-lg-1"></div>
+				<input class="col-lg-5" type="text" placeholder="Last Name" ng-model="lName">
+			</div>	
+			<br>
+			<div class="row">
+				<input class="col-lg-5" type="text" placeholder="Email" ng-model="email">
+			</div>
+			<br>
+			<div class="row">
+				<button ng-click="submit()">Give us yr infoz! </button>
+			</div>
+		</form>
+	</div>
+</section>
